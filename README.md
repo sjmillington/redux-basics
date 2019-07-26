@@ -19,10 +19,10 @@ Client state      | isAuthenticated   | Yes.
 
  - Adding Middleware
  - Redux Devtools
- - Async code execution & handling
+ - Async code execution & handling (with redux thunk)
  - Action creators
  - Utility functions
- - Switch-case replacement.
+ - Switch-case simplification (one line per case).
   
 
 
