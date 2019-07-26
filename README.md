@@ -15,7 +15,7 @@ Client state      | isAuthenticated   | Yes.
  - Reducers - **immutably** changing the state
  - subscriptions - updating compnents when the state changes. This is handled automatically with react-redux.
 
- ## Advanced Refux concepts:
+ ## Advanced Redux concepts:
 
  - Adding Middleware
  - Redux Devtools
