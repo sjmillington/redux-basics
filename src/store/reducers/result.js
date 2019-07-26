@@ -1,4 +1,5 @@
-import * as actionTypes from '../actions'
+import * as actionTypes from '../actions/actionsTypes'
+import { updateObject } from '../utility'
 
 const initialState = {
     results: []
@@ -7,33 +8,23 @@ const initialState = {
 const resultReducer = (state = initialState, action) => {
 
     switch(action.type){
-        case(actionTypes.STORE_RESULT):
-            return {
-                ...state,
-                //.push would mutate the original array.
-                results: state.results.concat({
-                    value: action.value,
-                    id: createUUID()
-                })
-            }
-        case(actionTypes.DELETE_RESULT): 
-            //const id=2;
-            //this is ok because we're not mutating the items in the array, just removing a pointer.
-            // const newArray = [...state.results];
-            // newArray.splice(id, 1)
-
-            //filter creates a new array.
-            const updatedArray = state.results.filter((result, index) => result.id !== action.resultId);
-            return {
-                ...state,
-                results: updatedArray
-            }
-
-            
+        case(actionTypes.STORE_RESULT): return updateObject(state, {results: state.results.concat({value: action.value,id: createUUID()})});   //.push would mutate the original array.
+        case(actionTypes.DELETE_RESULT): return deleteResult(state, action);                
     }
 
     return state;
 
+}
+
+const deleteResult = (state, action) => {
+    //const id=2;
+    //this is ok because we're not mutating the items in the array, just removing a pointer.
+    // const newArray = [...state.results];
+    // newArray.splice(id, 1)
+
+    //filter creates a new array.
+    const updatedArray = state.results.filter((result, index) => result.id !== action.resultId);
+    return updateObject(state, {results: updatedArray})  
 }
 
 const createUUID = () => {
