@@ -10,19 +10,19 @@ Client state      | isAuthenticated   | Yes.
 
 ## Simple Redux concepts:
 
- Store - state management
- Actions - dispatching messages + payloads (commands)
- Reducers - **immutably** changing the state
- subscriptions - updating compnents when the state changes. This is handled automatically with react-redux.
+ - Store - state management
+ - Actions - dispatching messages + payloads (commands)
+ - Reducers - **immutably** changing the state
+ - subscriptions - updating compnents when the state changes. This is handled automatically with react-redux.
 
  ## Advanced Refux concepts:
 
- Adding Middleware
- Redux Devtools
- Async code execution & handling
- Action creators
- Utility functions
- Switch-case replacement.
+ - Adding Middleware
+ - Redux Devtools
+ - Async code execution & handling
+ - Action creators
+ - Utility functions
+ - Switch-case replacement.
   
 
 
